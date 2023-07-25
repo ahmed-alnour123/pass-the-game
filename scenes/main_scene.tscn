@@ -73,18 +73,6 @@ mesh = SubResource("BoxMesh_0paqa")
 [node name="Collider" type="CollisionShape3D" parent="StartingPlatform"]
 shape = SubResource("BoxShape3D_oe4iq")
 
-[node name="Boat2" parent="." instance=ExtResource("2_4k37h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1475, 0, -15.8565)
-
-[node name="Boat3" parent="." instance=ExtResource("2_4k37h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53772, 0, -30.8507)
-
-[node name="Boat4" parent="." instance=ExtResource("2_4k37h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5389, 0, -36.8521)
-
-[node name="Boat5" parent="." instance=ExtResource("2_4k37h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.14627, 0, -51.8462)
-
 [node name="Boundries" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
 
@@ -113,6 +101,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
 
 [node name="Marker3" type="Marker3D" parent="BoatsCreator/Markers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="Boat2" parent="BoatsCreator" instance=ExtResource("2_4k37h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1475, 0, 43.3536)
+
+[node name="Boat3" parent="BoatsCreator" instance=ExtResource("2_4k37h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53772, 0, 28.3594)
+
+[node name="Boat4" parent="BoatsCreator" instance=ExtResource("2_4k37h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5389, 0, 22.358)
+
+[node name="Boat5" parent="BoatsCreator" instance=ExtResource("2_4k37h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.14627, 0, 7.3639)
 
 [node name="Water" type="Node3D" parent="."]
 transform = Transform3D(0.744941, 0, -0.667131, 0, 1, 0, 0.667131, 0, 0.744941, -28.327, 3.8147e-06, -12.2131)
