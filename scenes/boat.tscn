@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct2x8lrsreng8"]
+
+[ext_resource type="Script" path="res://scripts/boat.gd" id="1_m137f"]
+[ext_resource type="PackedScene" uid="uid://bybcrki8r8s60" path="res://models/watercraftPack_029.gltf" id="2_h5bgm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oe4iq"]
+size = Vector3(4.901, 1.907, 9.262)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_50yg4"]
+size = Vector3(6, 1, 6)
+
+[node name="Boat" type="CharacterBody3D" groups=["boat"]]
+collision_layer = 2
+script = ExtResource("1_m137f")
+speed = 10.0
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20072, -0.702521)
+shape = SubResource("BoxShape3D_oe4iq")
+
+[node name="TopTrigger" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TopTrigger"]
+shape = SubResource("BoxShape3D_50yg4")
+
+[node name="Marker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58369, 0)
+
+[node name="watercraftPack_029" parent="." instance=ExtResource("2_h5bgm")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, -0.664857, 0)
+
+[connection signal="body_entered" from="TopTrigger" to="." method="_on_top_trigger_body_entered"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl4wckfih7lty"]
+
+[ext_resource type="PackedScene" uid="uid://bybcrki8r8s60" path="res://models/watercraftPack_029.gltf" id="1_doboi"]
+[ext_resource type="Shader" path="res://art/water.gdshader" id="2_aogyc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kntqv"]
+render_priority = 0
+shader = ExtResource("2_aogyc")
+shader_parameter/out_color = Color(0, 0.2, 1, 1)
+shader_parameter/amount = 0.8
+shader_parameter/speed = 1.0
+shader_parameter/beer_factor = 0.8
+shader_parameter/metallic = 0.6
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.05
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r6pxs"]
+material = SubResource("ShaderMaterial_kntqv")
+size = Vector2(100, 100)
+
+[node name="TestScene" type="Node3D"]
+
+[node name="watercraftPack_030" parent="." instance=ExtResource("1_doboi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00750232, 0, 0.805914)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80835, 0, -1.64109)
+mesh = SubResource("PlaneMesh_r6pxs")
